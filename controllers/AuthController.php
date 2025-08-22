@@ -13,11 +13,6 @@ class AuthController {
         $this->user = new User($this->db);
     }
 
-    /**
-     * Handle user registration
-     * @param array $data - Registration data (name, email, password, confirm_password)
-     * @return array - Result with success status and messages
-     */
     public function register($data) {
         $response = [
             'success' => false,
@@ -52,7 +47,7 @@ class AuthController {
 
             if ($this->user->create()) {
                 $response['success'] = true;
-                $response['message'] = "Registration successful! You can now login.";
+                $response['message'] = "Registration successful! Proceed to login.";
             } else {
                 $response['errors'][] = "Unable to register. Please try again.";
             }
@@ -118,18 +113,11 @@ class AuthController {
         return $response;
     }
 
-    /**
-     * Validate user session
-     * @return bool
-     */
     public function validateSession() {
         session_start();
         return isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
     }
 
-    /**
-     * Destroy user session (logout)
-     */
     public function logout() {
         session_start();
         session_unset();

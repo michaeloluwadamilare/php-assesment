@@ -12,10 +12,6 @@ class TaskController {
         $this->task = new Task($this->db);
     }
 
-    /**
-     * Get all tasks
-     * @return array - List of tasks
-     */
     public function getAllTasks() {
         $response = [
             'success' => false,
@@ -39,11 +35,6 @@ class TaskController {
         return $response;
     }
 
-    /**
-     * Get task by ID
-     * @param int $id - Task ID
-     * @return array - Task data
-     */
     public function getTaskById($id) {
         $response = [
             'success' => false,
@@ -79,11 +70,6 @@ class TaskController {
         return $response;
     }
 
-    /**
-     * Create a new task
-     * @param array $data - Task data (task_name, description, user_id, status)
-     * @return array - Creation result
-     */
     public function createTask($data) {
         $response = [
             'success' => false,
@@ -123,12 +109,6 @@ class TaskController {
         return $response;
     }
 
-    /**
-     * Update an existing task
-     * @param int $id - Task ID
-     * @param array $data - Updated task data
-     * @return array - Update result
-     */
     public function updateTask($id, $data) {
         $response = [
             'success' => false,
@@ -169,11 +149,6 @@ class TaskController {
         return $response;
     }
 
-    /**
-     * Delete a task
-     * @param int $id - Task ID
-     * @return array - Delete result
-     */
     public function deleteTask($id) {
         $response = [
             'success' => false,
@@ -204,7 +179,6 @@ class TaskController {
     }
 }
 
-// Helper function for sanitization
 function sanitizeInput($data) {
     return htmlspecialchars(strip_tags(trim($data)));
 }

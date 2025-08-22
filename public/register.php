@@ -10,8 +10,9 @@ if($_POST) {
     $result = $authController->register($_POST);
     
     if($result['success']) {
-        $success = $result['message'];
-        $_POST = array(); // Clear form
+        // Redirect to login with success message
+        header("Location: login.php?registered=true");
+        exit;
     } else {
         $errors = $result['errors'];
     }
