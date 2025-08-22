@@ -2,7 +2,9 @@
 
 Assessment 1
 
-The index page is the entry point of the code implemented which routes you to the registration page. On successful registeration a user  is routed to the login page
+The index page is the entry point of the code implemented which routes you to the registration page. On successful registeration a user  is routed to the login page.
+
+The database configuration are found in the config folder and the database schema is found in the database folder.
 
 Assessment 2
 
