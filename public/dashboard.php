@@ -35,6 +35,7 @@
         <div class="welcome">
             Welcome, <?php echo htmlspecialchars($_SESSION['user_name']); ?>
             <p>Email: <?php echo htmlspecialchars($_SESSION['user_email']); ?></p>
+            <p>User ID: <?php echo htmlspecialchars($_SESSION['user_id']); ?></p>
         </div>
     </div>
 </body>
