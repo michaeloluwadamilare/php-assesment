@@ -11,20 +11,20 @@ Assessment 2
 API Usage Examples
 GET all tasks:
 
-curl -X GET http://localhost/api/tasks.php
+curl -X GET http://localhost/php-assesment/api/tasks.php
 
 POST new task:
 
-curl -X POST http://localhost/api/tasks.php \
+curl -X POST http://localhost/php-assesment/api/tasks.php \
 -H "Content-Type: application/json" \
 -d '{"task_name":"Test Task","description":"Test Description","user_id":1}'
 
 PUT update task:
 
-curl -X PUT http://localhost/api/tasks.php?id=1 \
+curl -X PUT http://localhost/php-assesment/api/tasks.php?id=1 \
 -H "Content-Type: application/json" \
 -d '{"task_name":"Updated Task","description":"Updated Description","status":"completed"}'
 
 DELETE task:
 
-curl -X DELETE http://localhost/api/tasks.php?id=1
+curl -X DELETE http://localhost/php-assesment/api/tasks.php?id=1
