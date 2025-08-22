@@ -1,0 +1,21 @@
+CREATE DATABASE assessment_db;
+USE assessment_db;
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tasks (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    task_name VARCHAR(200) NOT NULL,
+    description TEXT,
+    status ENUM('pending', 'completed') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
